@@ -4,6 +4,7 @@ package com.tutorial.praneethpj.tutorial.controller;
 import com.tutorial.praneethpj.tutorial.model.User;
 import com.tutorial.praneethpj.tutorial.payload.LoginRequest;
 import com.tutorial.praneethpj.tutorial.payload.SignUpRequest;
+import com.tutorial.praneethpj.tutorial.payload.UserRequest;
 import com.tutorial.praneethpj.tutorial.repository.UserRepository;
 import com.tutorial.praneethpj.tutorial.security.JwtTokenProvider;
 import com.tutorial.praneethpj.tutorial.service.UserService;
@@ -59,6 +60,14 @@ public class AuthController {
         }else{
             return ResponseEntity.ok("Cannot create a user");
         }
+    }
+
+
+
+    @PostMapping("/userRequest")
+    public ResponseEntity<?> userRequest(@Valid @RequestBody UserRequest userRequest) {
+
+return ResponseEntity.ok(userRequest);
     }
 
 
